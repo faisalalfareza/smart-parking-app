@@ -1,0 +1,59 @@
+<ion-view view-title="Story" hide-nav-bar="true"> 
+  <ion-content>   
+
+    <div class="row slider-main" style="position:relative;height:auto;width:100vw;align-items:center;padding:1em;background-color:#fbfdfe;border:0;">
+        <div ng-if="(username == null)" class="col col-60">
+            <p style="font-size:12px;line-height:1.3em;">Pencatatan setiap transaksi perparkiran untuk memantau pendapatan yang diperoleh</p>
+        </div>
+        <div ng-if="(username != null)" class="col col-60">
+            <p style="font-size:12px;line-height:1.3em;">Selamat datang <strong>{{username}}</strong>, anda terdaftar sebagai juru parkir</p>
+        </div>
+        <div class="col col-40">
+            <a ng-if="(username != null)" class="button" ng-click="goToCheckout()" style="width:100%;border-radius:10px;padding:0 2%;display:flex;align-items:center;justify-content:center;min-height:0;border:2px solid #3498db;outline:0;background-color:transparent;height:85%;">
+                <strong style="font-size: 12px;color:#3498db;">Checkout</strong>
+            </a>    
+            <a ng-if="(username == null)" class="button" ng-click="goToCheckin()" style="width:100%;border-radius:10px;padding:0 2%;display:flex;align-items:center;justify-content:center;min-height:0;border:2px solid #3498db;outline:0;background-color:transparent;height:85%;">
+                <strong style="font-size: 12px;color:#3498db;">Checkin</strong>
+            </a>            
+        </div>
+    </div> 
+
+    <div class="row slider-main" style="position:relative;height:auto;width:100vw;align-items:center;margin:0;padding:0;background-color:#3498db;border:0;">
+        <div class="col col-100" align="center" style="margin:0;padding:0;">
+
+            <img src="img/wrapper-img.gif" style="width:100%;">
+            <div class="padding">
+                <span ng-if="(username == null)">
+                    <h4 style="color:white;font-size:20px;"><strong>Iyo</strong>park</h4>
+                    <p style="color:white;margin-top:-0.5em;font-weight:700;">Mudah, dan Sistematis</p>
+                </span>                
+                <span ng-if="(username != null)">
+                    <i ng-click="goToSetting()" class="icon ion-ios-settings-strong" style="position:absolute;color:white;right:0;padding-right:2em;"></i>                   
+                    <h4 style="color:white;font-size:30px;">32</h4>
+                    <p style="color:white;margin-top:-0.5em;font-weight:700;">Pelanggan Terdaftar</p>                    
+                </span>
+                <p style="color:white;font-size: 12px;">Selalu ada memberikan anda pengalaman parkir yang terbaik. Bagi Pengendara, Pengelola, dan Juru Parkir</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-if="(username != null)" class="row sub-menu recom_mainmenu" style="border:0;letter-spacing:-0.2px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);">
+        <div class="col col-50 sub-menu" align="center">
+            <ion-item class="sub item-custom" href="#/app/recomended/13" on-touch="scanBarcode()" style="padding:1em;line-height:1em;">
+                <i class="icon ion-ios-checkmark-outline"></i> <br>
+                <strong style="font-size: 12px">Check</strong> 
+                <span style="font-size: 12px">Barcode</span>
+            </ion-item>
+        </div>
+        <div class="col col-50 sub-menu" align="center">
+            <ion-item class="sub item-custom" href="#/tab/chats" style="padding:1em;line-height:1em;">
+                <i class="icon ion-ios-pulse-strong"></i> <br>
+                <strong style="font-size: 12px">Customer</strong> 
+                <span style="font-size: 12px">History</span>
+            </ion-item>
+        </div>
+    </div>     
+
+  </ion-content>
+</ion-view>
